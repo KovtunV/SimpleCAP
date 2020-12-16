@@ -23,6 +23,15 @@ namespace SimpleCapTest.WebApp1.Controllers
                 Name = "Vitaly",
                 Age = 26.256m
             };
+            
+            // if you don't need a result
+            // await _bus.SendAsync(model);
+
+            // if you need a result
+            // var directRes = await _bus.SendAsync<MyRequestModel, MyResponseModel>(model);
+
+            // If you don't want to write a request type in generic method
+            // var res = await _bus.Request(model).SendAsync<MyResponseModel>();
 
             var res = await _bus.Request(model).SendAsync<MyResponseModel>();
             return res;
