@@ -1,0 +1,382 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleCAP</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleCAP.Attributes.OverrideSubscribeAttribute">
+            <summary>
+            Overrides default topic Name and Group. Usable with TRequest and <see cref="T:SimpleCAP.Handlers.ICapEventHandler"/>
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Attributes.OverrideSubscribeAttribute.Name">
+            <summary>
+            Topic or exchange route key name.
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Attributes.OverrideSubscribeAttribute.Group">
+            <summary>
+            Default group name is CapOptions setting.(Assembly name)
+            kafka --> groups.id
+            rabbit MQ --> queue.name
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Attributes.OverrideSubscribeAttribute.TryGetName(System.String@)">
+            <summary>
+            Returns Name if exists
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Attributes.OverrideSubscribeAttribute.TryGetGroup(System.String@)">
+            <summary>
+            Returns Group if exists
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Bus.BusCallbackService">
+            <summary>
+            Callback awaiter
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.BusCallbackService.#ctor(Microsoft.Extensions.Options.IOptions{SimpleCAP.Options.CallbackOptions},SimpleCAP.Contracts.Bus.IValueConverterService)">
+            <summary>
+            Callback awaiter
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.BusCallbackService.WaitAsync``1(System.String)">
+            <summary>
+            Wait callback
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.BusCallbackService.AddResponse(System.String,System.Object)">
+            <summary>
+            Add response to callback container
+            </summary>
+        </member>
+        <member name="F:SimpleCAP.Bus.BusCallbackService.DefaultTimeout">
+            <summary>
+            Default response timeout, 3 minutes
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Bus.BusCallbackSubscriber">
+            <summary>
+            Cap subscriber for callbacks
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.BusCallbackSubscriber.#ctor(SimpleCAP.Contracts.Bus.IBusCallbackService)">
+            <summary>
+            Cap subscriber for callbacks
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Bus.BusCallbackSubscriber.CallbackName">
+            <summary>
+            CallbackName
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Bus.Models.CallbackResult`1">
+            <summary>
+            Callback result
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Bus.Models.CallbackResult`1.Response">
+            <summary>
+            Response model
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Bus.Models.CallbackResult`1.ErrorMessage">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Bus.Models.CallbackResult`1.IsOk">
+            <summary>
+            Ok if <see cref="P:SimpleCAP.Bus.Models.CallbackResult`1.ErrorMessage"/> doesn't exist
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.Models.CallbackResult`1.#ctor(`0)">
+            <summary>
+            Callback result
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.Models.CallbackResult`1.Error(System.String)">
+            <summary>
+            Makes the error instance
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1">
+            <summary>
+            Wrapper for eventBus result
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.#ctor(SimpleCAP.Contracts.Bus.ISimpleCapBus,`0,System.String)">
+            <summary>
+            Wrapper for eventBus result
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.SendAsync">
+            <summary>
+            Send request
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.SendAsync``1">
+            <summary>
+            Send request and wait reasponse
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Bus.SimpleCapBus">
+            <summary>
+            EventBus
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Bus.SimpleCapBus.CapBus">
+            <summary>
+            Original CAP bus
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.SimpleCapBus.#ctor(Microsoft.Extensions.Logging.ILogger{SimpleCAP.Bus.SimpleCapBus},SimpleCAP.Contracts.IEndpointNameService,SimpleCAP.Contracts.IKeyGeneratorService,DotNetCore.CAP.ICapPublisher,SimpleCAP.Contracts.Bus.IBusCallbackService,SimpleCAP.Contracts.Bus.IBusCallbackSubscriber)">
+            <summary>
+            EventBus
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.SimpleCapBus.Request``1(``0,System.String)">
+            <summary>
+            Make request
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.SimpleCapBus.SendAsync``1(``0,System.String)">
+            <summary>
+            Send request
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.SimpleCapBus.SendAsync``2(``0,System.String)">
+            <summary>
+            Send request and wait reasponse
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Bus.ValueConverterService">
+            <summary>
+            Value converter
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.ValueConverterService.Convert``1(System.Object)">
+            <summary>
+            Convert
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Contracts.Bus.IBusCallbackService">
+            <summary>
+            Callback awaiter
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.Bus.IBusCallbackService.WaitAsync``1(System.String)">
+            <summary>
+            Wait callback
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.Bus.IBusCallbackService.AddResponse(System.String,System.Object)">
+            <summary>
+            Add response to callback container
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Contracts.Bus.IBusCallbackSubscriber">
+            <summary>
+            Cap subscriber for callbacks. Based on <see cref="T:DotNetCore.CAP.ICapSubscribe"/>
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Contracts.Bus.IBusCallbackSubscriber.CallbackName">
+            <summary>
+            CallbackName
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Contracts.Bus.ISimpleCapBus">
+            <summary>
+            EventBus
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Contracts.Bus.ISimpleCapBus.CapBus">
+            <summary>
+            Original CAP bus
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.Bus.ISimpleCapBus.Request``1(``0,System.String)">
+            <summary>
+            Make request
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.Bus.ISimpleCapBus.SendAsync``1(``0,System.String)">
+            <summary>
+            Send request
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.Bus.ISimpleCapBus.SendAsync``2(``0,System.String)">
+            <summary>
+            Send request and wait reasponse
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Contracts.Bus.IValueConverterService">
+            <summary>
+            Value converter
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.Bus.IValueConverterService.Convert``1(System.Object)">
+            <summary>
+            Convert
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Contracts.IEndpointNameService">
+            <summary>
+            Topic name service
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.IEndpointNameService.GetName``1">
+            <summary>
+            Returns the topic name
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.IEndpointNameService.GetName(System.Type)">
+            <summary>
+            Returns the topic name
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Contracts.IKeyGeneratorService">
+            <summary>
+            Generates the unique key
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.IKeyGeneratorService.Generate">
+            <summary>
+            Returns key
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Contracts.IOverrideSubscribe">
+            <summary>
+            Overrides default topic Name and Group. Usable with TRequest and <see cref="T:SimpleCAP.Handlers.ICapEventHandler"/>
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Contracts.IOverrideSubscribe.Name">
+            <summary>
+            Topic or exchange route key name.
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Contracts.IOverrideSubscribe.Group">
+            <summary>
+            Default group name is CapOptions setting.(Assembly name)
+            kafka --> groups.id
+            rabbit MQ --> queue.name
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.IOverrideSubscribe.TryGetName(System.String@)">
+            <summary>
+            Returns Name if exists
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Contracts.IOverrideSubscribe.TryGetGroup(System.String@)">
+            <summary>
+            Returns Group if exists
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Exceptions.CapEventHandlerTypeException">
+            <summary>
+            Wrong handler exception
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Exceptions.CapEventHandlerTypeException.#ctor(System.String)">
+            <summary>
+            Wrong handler exception
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Handlers.ICapEventHandler">
+            <summary>
+            Event handler
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Handlers.ICapEventHandler`1">
+            <summary>
+            Event handler with default name = <see cref="!:TRequest"/>. To override name use <see cref="T:SimpleCAP.Attributes.OverrideSubscribeAttribute"/>
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Handlers.ICapEventHandler`2">
+            <summary>
+            Event handler with a response and a default name = <see cref="!:TRequest"/>. To override name use <see cref="T:SimpleCAP.Attributes.OverrideSubscribeAttribute"/>
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Options.CallbackOptions">
+            <summary>
+            Callback options
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Options.CallbackOptions.Timeout">
+            <summary>
+            Receive message timeout
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Options.CapEventHandlerOptions">
+            <summary>
+            Handler container
+            </summary>
+        </member>
+        <member name="P:SimpleCAP.Options.CapEventHandlerOptions.Handlers">
+            <summary>
+            Event handlers
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Options.CapEventHandlerOptions.#ctor">
+            <summary>
+            Handler container
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Options.CapEventHandlerOptions.AddHandler``1">
+            <summary>
+            Add an event handler
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Options.CapEventHandlerOptions.AddHandler(System.Type)">
+            <summary>
+            Add an event handler
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.ReplacedServices.SimpleCAPConsumerServiceSelector">
+            <summary>
+            Overrided <see cref="T:DotNetCore.CAP.Internal.ConsumerServiceSelector"/>
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.ReplacedServices.SimpleCAPConsumerServiceSelector.#ctor(System.IServiceProvider,SimpleCAP.Contracts.IEndpointNameService,Microsoft.Extensions.Options.IOptions{SimpleCAP.Options.CapEventHandlerOptions})">
+            <summary>
+            Overrided <see cref="T:DotNetCore.CAP.Internal.ConsumerServiceSelector"/>
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Services.EndpointNameService">
+            <summary>
+            Topic name service
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Services.EndpointNameService.GetName``1">
+            <summary>
+            Returns the topic name
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Services.EndpointNameService.GetName(System.Type)">
+            <summary>
+            Returns the topic name
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.Services.KeyGeneratorService">
+            <summary>
+            Generates the unique key
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Services.KeyGeneratorService.#ctor">
+            <summary>
+            Generates the unique key
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Services.KeyGeneratorService.Generate">
+            <summary>
+            Returns key
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.SimpleCAPExtensions.AddSimpleCap(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{DotNetCore.CAP.CapOptions})">
+            <summary>
+            Add simple CAP wrapper
+            </summary>
+        </member>
+    </members>
+</doc>
