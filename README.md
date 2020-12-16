@@ -63,7 +63,7 @@ This interface has three methods:
 * `SimpleCapBusWrapper<TRequest> Request<TRequest>(TRequest model, string name = null)`
 
 Controller for example:
-```scharp
+```csharp
 [ApiController]
 public class Web1Controller : ControllerBase
 {
