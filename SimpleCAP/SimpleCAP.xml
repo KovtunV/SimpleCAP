@@ -51,6 +51,11 @@
             Add response to callback container
             </summary>
         </member>
+        <member name="M:SimpleCAP.Bus.BusCallbackService.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
         <member name="F:SimpleCAP.Bus.BusCallbackService.DefaultTimeout">
             <summary>
             Default response timeout, 3 minutes
@@ -67,6 +72,11 @@
             </summary>
         </member>
         <member name="P:SimpleCAP.Bus.BusCallbackSubscriber.CallbackName">
+            <summary>
+            CallbackName
+            </summary>
+        </member>
+        <member name="F:SimpleCAP.Bus.BusCallbackSubscriber.CALLBACK_NAME">
             <summary>
             CallbackName
             </summary>
@@ -119,6 +129,21 @@
         <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.SendAsync``1">
             <summary>
             Send request and wait reasponse
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.Equals(SimpleCAP.Bus.Models.SimpleCapBusWrapper{`0})">
+            <summary>
+            Equals
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.GetHashCode">
+            <summary>
+            GetHashCode
             </summary>
         </member>
         <member name="T:SimpleCAP.Bus.SimpleCapBus">
@@ -290,12 +315,24 @@
         </member>
         <member name="T:SimpleCAP.Handlers.ICapEventHandler`1">
             <summary>
-            Event handler with default name = <see cref="!:TRequest"/>. To override name use <see cref="T:SimpleCAP.Attributes.OverrideSubscribeAttribute"/>
+            Event handler with default name = TRequest.Name
+            <para>To override name use <see cref="T:SimpleCAP.Attributes.OverrideSubscribeAttribute"/></para>
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Handlers.ICapEventHandler`1.HandleAsync(`0)">
+            <summary>
+            Handle message
             </summary>
         </member>
         <member name="T:SimpleCAP.Handlers.ICapEventHandler`2">
             <summary>
-            Event handler with a response and a default name = <see cref="!:TRequest"/>. To override name use <see cref="T:SimpleCAP.Attributes.OverrideSubscribeAttribute"/>
+            Event handler with a response and a default name = TRequest.Name
+            <para>To override name use <see cref="T:SimpleCAP.Attributes.OverrideSubscribeAttribute"/></para>
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.Handlers.ICapEventHandler`2.HandleAsync(`0)">
+            <summary>
+            Handle message
             </summary>
         </member>
         <member name="T:SimpleCAP.Options.CallbackOptions">
@@ -343,6 +380,16 @@
             Overrided <see cref="T:DotNetCore.CAP.Internal.ConsumerServiceSelector"/>
             </summary>
         </member>
+        <member name="M:SimpleCAP.ReplacedServices.SimpleCAPConsumerServiceSelector.FindConsumersFromInterfaceTypes(System.IServiceProvider)">
+            <summary>
+            Overrided FindConsumersFromInterfaceTypes
+            </summary>
+        </member>
+        <member name="M:SimpleCAP.ReplacedServices.SimpleCAPConsumerServiceSelector.GetHandlerDescriptions(System.Type,System.Type,System.Type)">
+            <summary>
+            Returns Handler-based descriptions
+            </summary>
+        </member>
         <member name="T:SimpleCAP.Services.EndpointNameService">
             <summary>
             Topic name service
@@ -371,6 +418,11 @@
         <member name="M:SimpleCAP.Services.KeyGeneratorService.Generate">
             <summary>
             Returns key
+            </summary>
+        </member>
+        <member name="T:SimpleCAP.SimpleCAPExtensions">
+            <summary>
+            SimpleCAPExtensions
             </summary>
         </member>
         <member name="M:SimpleCAP.SimpleCAPExtensions.AddSimpleCap(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{DotNetCore.CAP.CapOptions})">
