@@ -12,7 +12,8 @@
     <RepositoryUrl>https://github.com/KovtunV/SimpleCAP</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>microservices, cap, kafka, rabbitmq, distributed-systems</PackageTags>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Continuous integration testing</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
