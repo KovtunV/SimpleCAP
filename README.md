@@ -4,7 +4,7 @@
 [![NuGet version (SimpleCAP)](https://img.shields.io/nuget/v/SimpleCAP.svg?style=flat-square)](https://www.nuget.org/packages/SimpleCAP)
 [![NuGet Download](https://img.shields.io/nuget/dt/SimpleCAP.svg?style=flat-square)](https://www.nuget.org/packages/SimpleCAP)
 
-Use your distributed system easier. based on [DotNetCore.CAP](https://cap.dotnetcore.xyz/).
+Use your distributed system easier. Based on [DotNetCore.CAP](https://cap.dotnetcore.xyz/).
 
 <!--ts-->
    * [Getting Started](#Getting-Started)
@@ -52,7 +52,7 @@ public class MyHandler : ICapEventHandler<MyRequestModel, MyResponseModel>
 ```
 
 By default the topic name is **MyRequestModel** and Group is **null**, but you can override this by meance of using the attribute **OverrideSubscribe**. 
-Furthermore, you can use this attribute with request class **MyRequestModel**.
+Furthermore, you can use this attribute with a request class **MyRequestModel**.
 
 ### Event bus
 Inject `ISimpleCapBus` in your Controller, Service, etc. 

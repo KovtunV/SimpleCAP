@@ -128,7 +128,7 @@
         </member>
         <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.SendAsync``1">
             <summary>
-            Send request and wait reasponse
+            Send request and wait response
             </summary>
         </member>
         <member name="M:SimpleCAP.Bus.Models.SimpleCapBusWrapper`1.Equals(SimpleCAP.Bus.Models.SimpleCapBusWrapper{`0})">
@@ -173,7 +173,7 @@
         </member>
         <member name="M:SimpleCAP.Bus.SimpleCapBus.SendAsync``2(``0,System.String)">
             <summary>
-            Send request and wait reasponse
+            Send request and wait response
             </summary>
         </member>
         <member name="T:SimpleCAP.Bus.ValueConverterService">
@@ -233,7 +233,7 @@
         </member>
         <member name="M:SimpleCAP.Contracts.Bus.ISimpleCapBus.SendAsync``2(``0,System.String)">
             <summary>
-            Send request and wait reasponse
+            Send request and wait response
             </summary>
         </member>
         <member name="T:SimpleCAP.Contracts.Bus.IValueConverterService">

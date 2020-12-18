@@ -62,7 +62,7 @@ namespace SimpleCAP.Bus
         }
 
         /// <summary>
-        /// Send request and wait reasponse
+        /// Send request and wait response
         /// </summary>
         public async Task<TResponse> SendAsync<TRequest, TResponse>(TRequest model, string name = null)
         {

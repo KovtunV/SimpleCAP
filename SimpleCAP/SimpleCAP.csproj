@@ -12,16 +12,28 @@
     <RepositoryUrl>https://github.com/KovtunV/SimpleCAP</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>microservices, cap, kafka, rabbitmq, distributed-systems</PackageTags>
-    <Version>1.0.1</Version>
-    <PackageReleaseNotes>Continuous integration testing</PackageReleaseNotes>
+    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Add documentation</PackageReleaseNotes>
+    <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>SimpleCAP.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>SimpleCAP.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="DotNetCore.CAP" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -25,7 +25,7 @@ namespace SimpleCAP.Contracts.Bus
         Task SendAsync<TRequest>(TRequest model, string name = null);
 
         /// <summary>
-        /// Send request and wait reasponse
+        /// Send request and wait response
         /// </summary>
         Task<TResponse> SendAsync<TRequest, TResponse>(TRequest model, string name = null);
     }
